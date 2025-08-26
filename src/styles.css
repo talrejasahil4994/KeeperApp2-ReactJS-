@@ -1,0 +1,360 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  padding: 0 16px;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background: #2d3748;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  color: #f7fafc;
+}
+
+header {
+  background-color: #f5ba13;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+}
+
+body.dark header {
+  background-color: #4a5568;
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  position: relative;
+}
+
+body.dark .form-container {
+  background: #4a5568;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-container input {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  font-family: inherit;
+  resize: none;
+  outline: none;
+  width: 100%;
+  padding: 10px;
+}
+
+body.dark .form-container input {
+  color: #f7fafc;
+}
+
+.form-container input::placeholder {
+  color: #999;
+}
+
+body.dark .form-container input::placeholder {
+  color: #a0aec0;
+}
+
+.form-container button {
+  position: absolute;
+  bottom: -18px;
+  right: 18px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+body.dark .form-container button {
+  background: #4299e1;
+}
+
+.form-container button:hover {
+  transform: scale(1.1);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+body.dark .todo-item {
+  background: #4a5568;
+  color: #f7fafc;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.todo-item.completed {
+  opacity: 0.7;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-checkbox {
+  margin-right: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1.1rem;
+  padding: 5px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+}
+
+body.dark .todo-text {
+  color: #f7fafc;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.todo-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.todo-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+body.dark .todo-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.edit-btn {
+  color: #4299e1;
+}
+
+.delete-btn {
+  color: #e53e3e;
+}
+
+.save-btn {
+  color: #48bb78;
+}
+
+.cancel-btn {
+  color: #ed8936;
+}
+
+.todo-stats {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+body.dark .todo-stats {
+  background: rgba(0, 0, 0, 0.2);
+  color: #f7fafc;
+}
+
+.stat-item {
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+.todos-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  background: #f5ba13;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark footer {
+  background: #4a5568;
+}
+
+.drag-over {
+  border: 2px dashed #4299e1;
+  background: rgba(66, 153, 225, 0.1);
+}
+
+.dragging {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+/* EDITING ENHANCEMENTS */
+.todo-item.editing {
+  border: 2px solid #4299e1;
+  background: rgba(66, 153, 225, 0.05);
+  transform: translateY(-1px);
+}
+
+body.dark .todo-item.editing {
+  border: 2px solid #63b3ed;
+  background: rgba(99, 179, 237, 0.1);
+}
+
+.editing-input {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid #4299e1 !important;
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  margin: 0 5px !important;
+  font-weight: 500 !important;
+}
+
+body.dark .editing-input {
+  background: rgba(74, 85, 104, 0.9) !important;
+  border: 1px solid #63b3ed !important;
+  color: #f7fafc !important;
+}
+
+.editing-input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1) !important;
+}
+
+.todo-item.editing .todo-checkbox {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.todo-item.editing .todo-actions .todo-btn {
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.todo-text[title] {
+  cursor: pointer;
+}
+
+.todo-text[title]:hover {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+
+body.dark .todo-text[title]:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Prevent text selection during drag */
+.todo-item[draggable="true"] .todo-text {
+  user-select: none;
+}
+
+.todo-item.editing[draggable="false"] .todo-text {
+  user-select: text;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 16px;
+  }
+
+  .form-container {
+    margin: 10px;
+  }
+}
