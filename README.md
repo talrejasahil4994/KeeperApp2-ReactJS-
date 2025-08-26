@@ -2,7 +2,9 @@
 
 A modern, feature-rich todo application built with React.js featuring beautiful UI, drag & drop functionality, light/dark theme support, and seamless editing capabilities.
 
-![Keeper App](./screenshots/demo.png)
+![Keeper App -LightMode](./screenshots/demo1.png)
+
+![Keeper App -DarkMode](./screenshots/demo2.png)
 
 ## ✨ Features
 
